@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import axios from "axios";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const clicked = () =>
+		axios({
+			method: "POST",
+			url: process.env.REACT_APP_URL,
+			data: {
+				ref: "main",
+			},
+			headers: {
+				Authorization: `Bearer ${process.env.REACT_APP_GH_TOKEN}`,
+				"X-GitHub-Api-Version": "2022-11-28",
+				Accept: "application/vnd.github.everest-preview+json",
+			},
+		});
+	// const request = axios.post()
+	return (
+		<>
+			<button onClick={clicked}> CLICK ME TO RUN </button>
+		</>
+	);
 }
 
 export default App;

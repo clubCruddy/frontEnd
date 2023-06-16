@@ -2,9 +2,9 @@ import "./App.css";
 import axios from "axios";
 import React, { useState } from "react";
 function App() {
-	const [buttonStatus, setButtonStatus] = useState(false);
+	const [buttonDisabled, setButtonDisabled] = useState(false);
 	const clicked = () => {
-		setButtonStatus(true);
+		setButtonDisabled(true);
 		return axios({
 			method: "POST",
 			url: process.env.REACT_APP_URL,
@@ -22,10 +22,10 @@ function App() {
 	return (
 		<>
 			<div className="App-header">
-				<button className={buttonStatus ? "App-logo Disabled":"App-logo"} disabled={buttonStatus} onClick={() => clicked()}>
+				<button className={buttonDisabled ? "App-logo Disabled":"App-logo"} disabled={buttonDisabled} onClick={() => clicked()}>
 					CLICK ME TO RUN
 				</button>
-				{buttonStatus}
+				{buttonDisabled ? <div>REPORT RUN HAS BEEN TRIGGERED</div> : <></> }
 			</div>
 		</>
 	);

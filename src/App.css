@@ -4,12 +4,22 @@
 
 .App-logo {
   height: 40vmin;
-  pointer-events: none;
+}
+
+.Disabled {
+  /* background-color: black; */
+  display: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    /* animation: App-logo-spin infinite 100s linear; */
+    border-radius: 100px;
+    height: 100px;
+    font-weight: bold;
+    color: orangered;
+    background-color: black;
+    box-shadow: 0px 10px 10px 0px;
   }
 }
 

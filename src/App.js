@@ -1,11 +1,14 @@
 import "./App.css";
 import axios from "axios";
+import React, { useState } from "react";
 function App() {
-	const clicked = () =>
-		axios({
+	const [buttonStatus, setButtonStatus] = useState(false);
+	const clicked = () => {
+		setButtonStatus(true);
+		return axios({
 			method: "POST",
 			url: process.env.REACT_APP_URL,
-			crossDomain:true,
+			crossDomain: true,
 			data: {
 				ref: "main",
 			},
@@ -15,10 +18,15 @@ function App() {
 				Accept: "application/vnd.github.everest-preview+json",
 			},
 		});
-	// const request = axios.post()
+	};
 	return (
 		<>
-			<button onClick={clicked}> CLICK ME TO RUN </button>
+			<div className="App-header">
+				<button className={buttonStatus ? "App-logo Disabled":"App-logo"} disabled={buttonStatus} onClick={() => clicked()}>
+					CLICK ME TO RUN
+				</button>
+				{buttonStatus}
+			</div>
 		</>
 	);
 }

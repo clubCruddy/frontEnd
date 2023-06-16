@@ -5,6 +5,7 @@ function App() {
 		axios({
 			method: "POST",
 			url: process.env.REACT_APP_URL,
+			crossDomain:true,
 			data: {
 				ref: "main",
 			},

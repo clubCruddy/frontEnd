@@ -1,5 +1,5 @@
-This front end merely holds a button that fires the programmatic execution of the github action. 
-[Here is the link to the front end](https://clubcruddyreport.netlify.app)
+This front end merely holds a button that fires the programmatic execution of the github action. \
+[Here is the link to the front end](https://clubcruddyreport.netlify.app)\
 below is an image of that app\
 <img src="https://github.com/clubCruddy/frontEnd/assets/114195647/a3dfbcb2-0859-46a3-9cb3-abf8180a6741" width="300px" height="300px"/>
 
